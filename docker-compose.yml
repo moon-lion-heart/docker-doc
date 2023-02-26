@@ -1,0 +1,8 @@
+version: '3'
+services:
+  practice:
+    image: python-sample:3.9
+    volumes:
+      - ./:/src
+    container_name: practice-container
+
