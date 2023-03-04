@@ -8,3 +8,14 @@ docker compose up -d practice-container           # デタッチモードで起�
 
 3. Execute command  
 docker compose exec practice-container /bin/bash  # サービスを指定してコンテナのバッシュ起動
+
+## docker-compose
+version: '3'  
+services: # サービスごとにコンテナを起動する  
+  env: # サービス名  
+    build: . # Dockerfileがあるディレクトリのパス  
+    image: python # イメージ  
+    volumes:  
+      - ./:/src # ホストマシンのディレクトリ:コンテナ内のディレクトリ  
+    container_name: create_env # コンテナ名を指定  
+    tty: true # これを指定しておくことでコンテナが終了しない  
