@@ -1,8 +1,10 @@
 version: '3'
 services:
-  practice:
-    image: python-sample:3.9
+  env:
+
+    build: .
+    image: python
     volumes:
       - ./:/src
-    container_name: practice-container
-
+    container_name: create_env
+    tty: true
